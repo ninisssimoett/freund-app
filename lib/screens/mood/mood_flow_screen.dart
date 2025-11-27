@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:freud_app/screens/mood/mood_history_screen.dart';
 import 'mood_page.dart';
 
 class MoodFlowScreen extends StatefulWidget {
@@ -13,11 +14,11 @@ class _MoodFlowScreenState extends State<MoodFlowScreen> {
   int currentPage = 0;
 
   final List<Color> moodColors = [
-    const Color(0xFFA694F5), 
-    const Color(0xFFED7E1C), 
-    const Color(0xFF926247), 
-    const Color(0xFFFFCE5C), 
-    const Color(0xFF9BB167), 
+    Color(0xFFA694F5),
+    Color(0xFFED7E1C),
+    Color(0xFF926247),
+    Color(0xFFFFCE5C),
+    Color(0xFF9BB167),
   ];
 
   final List<String> moodImages = [
@@ -28,18 +29,30 @@ class _MoodFlowScreenState extends State<MoodFlowScreen> {
     'assets/images/mood5.png',
   ];
 
+  final List<String> moodNames = [
+    "Happy",
+    "Excited",
+    "Calm",
+    "Bored",
+    "Relaxed",
+  ];
+
   void nextPage() {
     if (currentPage < 4) {
       _controller.nextPage(
-        duration: const Duration(milliseconds: 300),
+        duration: Duration(milliseconds: 300),
         curve: Curves.ease,
       );
     }
   }
 
-  void setMood() {
-    // nanti ini ke screen history 
-    Navigator.pushNamed(context, '/mood-history');
+  void setMood(String moodName) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => HistoryScreen(selectedMood: moodName),
+      ),
+    );
   }
 
   @override
@@ -54,7 +67,7 @@ class _MoodFlowScreenState extends State<MoodFlowScreen> {
             bgColor: moodColors[index],
             image: moodImages[index],
             onNext: nextPage,
-            onSetMood: setMood,
+            onSetMood: () => setMood(moodNames[index]),
           );
         },
       ),

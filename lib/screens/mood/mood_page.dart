@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MoodPage extends StatelessWidget {
-  final Color bgColor; 
-  final String image; 
-  final VoidCallback onNext; 
-  final VoidCallback onSetMood; 
+  final Color bgColor;
+  final String image;
+  final VoidCallback onNext;
+  final VoidCallback onSetMood;
 
   const MoodPage({
     super.key,
@@ -28,6 +29,22 @@ class MoodPage extends StatelessWidget {
             width: 590,
             height: 590,
             child: Image.asset(image, fit: BoxFit.contain),
+          ),
+        ),
+
+        Positioned(
+          bottom: 335,
+          left: 0,
+          right: 0,
+          child: Center(
+            child: Text(
+              "Slide to choose your mood »",
+              style: GoogleFonts.urbanist(
+                fontSize: 13,
+                fontWeight: FontWeight.w700,
+                color: Colors.white,
+              ),
+            ),
           ),
         ),
 
