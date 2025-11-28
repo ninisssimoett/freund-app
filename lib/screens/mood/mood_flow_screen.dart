@@ -50,7 +50,7 @@ class _MoodFlowScreenState extends State<MoodFlowScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => HistoryScreen(selectedMood: moodName),
+        builder: (_) => MoodHistoryScreen(),
       ),
     );
   }

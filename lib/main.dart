@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:freud_app/screens/journal/add_journal_screen.dart';
 import 'package:freud_app/screens/journal/journal_home_screen.dart';
+import 'package:freud_app/screens/mood/mood_flow_screen.dart';
+import 'package:freud_app/screens/mood/mood_history_screen.dart';
+import 'package:freud_app/screens/mood/mood_page.dart';
 
 
 
@@ -18,7 +22,7 @@ class MyApp extends StatelessWidget {
       
     
       debugShowCheckedModeBanner: false,
-      home: JournalHomeScreen(),
+      home: MoodFlowScreen(),
       
     );
   }
