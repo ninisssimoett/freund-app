@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:freud_app/screens/journal/journal_overview_screen.dart';
-import 'package:freud_app/screens/mood/mood_flow_screen.dart';
+import 'package:freud_app/screens/journal/journal_home_screen.dart';
+
 
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       
     
       debugShowCheckedModeBanner: false,
-      home: JournalOverviewScreen(),
+      home: JournalHomeScreen(),
       
     );
   }
